@@ -4,7 +4,28 @@
 
 # TesloShop DB
 Se realiza una API REST
-## 1. Levantar la DB
-``` 
+## INstalar las dependencias
+```
+npm install
+```
+## Levantar la DB
+```
 docker compose up -d
 ```
+## Compilar y correr la aplicacion
+```
+# development
+npm run start
+
+# watch mode
+npm run start:dev
+
+# production mode
+npm run start:prod
+``` 
+## Stack utilizado
+* PostgreSQL
+* Docker Compose
+* Nest.js
+* TypeORM
+* Typescript
