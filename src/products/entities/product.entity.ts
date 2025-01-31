@@ -1,4 +1,5 @@
-import { BeforeInsert, BeforeUpdate, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { ProductImage } from "./product-image.entity";
 
 @Entity()
 export class Product {
@@ -28,6 +29,13 @@ export class Product {
 
     @Column('text',{array: true, default: []})
     tags: string[]
+
+    @OneToMany(
+        ()=> ProductImage, 
+        (image) => image.product,
+        {cascade: true, eager: true}
+    )
+    images?:ProductImage[];
 
     // Método que se ejecuta antes de insertar un registro 
     @BeforeInsert()
