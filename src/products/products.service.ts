@@ -150,4 +150,17 @@ export class ProductsService {
       images: images.map( img => img.url )
     } 
   }
+
+  async deleteAllProducts(){
+    const query = this.productRepository.createQueryBuilder('product');
+
+    try {
+      return await query
+        .delete()
+        .where({})
+        .execute();
+    } catch (error) {
+      this.handleDBExceptions(error);
+    }
+  }
 }

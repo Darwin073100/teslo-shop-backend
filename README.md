@@ -23,6 +23,13 @@ npm run start:dev
 # production mode
 npm run start:prod
 ``` 
+
+## Ejecutar el Seed
+```
+# Data inicial de productos {get}
+http://localhost:3000/api/seed
+```
+
 ## Stack utilizado
 * PostgreSQL
 * Docker Compose
